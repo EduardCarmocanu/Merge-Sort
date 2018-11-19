@@ -42,34 +42,34 @@ namespace MergeSort
 			return Merge(LeftHalf, RightHalf);
 		}
 
-		private static List<int> Merge(List<int> leftHalf, List<int> rightHalf)
+		private static List<int> Merge(List<int> LeftHalf, List<int> RightHalf)
 		{
 			List<int> merger = new List<int>();
 
-			while(leftHalf.Count > 0 || rightHalf.Count > 0)
+			while(LeftHalf.Count > 0 || RightHalf.Count > 0)
 			{
-				if (leftHalf.Count > 0 && rightHalf.Count > 0)
+				if (LeftHalf.Count > 0 && RightHalf.Count > 0)
 				{
-					if (leftHalf.First() <= rightHalf.First())
+					if (LeftHalf.First() <= RightHalf.First())
 					{
-						merger.Add(leftHalf.First());
-						leftHalf.Remove(leftHalf.First());
+						merger.Add(LeftHalf.First());
+						LeftHalf.Remove(LeftHalf.First());
 					}
 					else
 					{
-						merger.Add(rightHalf.First());
-						rightHalf.Remove(rightHalf.First());
+						merger.Add(RightHalf.First());
+						RightHalf.Remove(RightHalf.First());
 					}
 				}
-				else if (leftHalf.Count > 0)
+				else if (LeftHalf.Count > 0)
 				{
-					merger.Add(leftHalf.First());
-					leftHalf.Remove(leftHalf.First());
+					merger.Add(LeftHalf.First());
+					LeftHalf.Remove(LeftHalf.First());
 				}
-				else if (rightHalf.Count > 0)
+				else if (RightHalf.Count > 0)
 				{
-					merger.Add(rightHalf.First());
-					rightHalf.Remove(rightHalf.First());
+					merger.Add(RightHalf.First());
+					RightHalf.Remove(RightHalf.First());
 				}
 			}
 
